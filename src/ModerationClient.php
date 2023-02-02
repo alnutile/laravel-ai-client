@@ -26,12 +26,14 @@ class ModerationClient extends LaravelChatgpt implements ModerationClientContrac
 
         $data = $response->json();
 
+        logger($data);
+
         $flagged = data_get($data, 'results.0.flagged');
 
         if ($flagged !== false) {
             logger('Failed Moderation '.$phrase);
         }
 
-        return $flagged;
+        return !$flagged;
     }
 }
