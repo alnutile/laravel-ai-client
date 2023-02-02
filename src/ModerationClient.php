@@ -34,6 +34,6 @@ class ModerationClient extends LaravelChatgpt implements ModerationClientContrac
             logger('Failed Moderation '.$phrase);
         }
 
-        return !$flagged;
+        return ! $flagged;
     }
 }
