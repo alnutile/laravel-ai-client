@@ -1,0 +1,19 @@
+{
+    "id": "cmpl-6a2sT1G5VCH1QosnIxB4oNLqwLJmg",
+    "object": "text_completion",
+    "created": 1674048889,
+    "model": "text-davinci-003",
+    "choices": [
+        {
+            "text": "\n\nLemon Blueberry Oat Muffins\n\nIngredients:\n\n\u20221 1\/2 cups all-purpose flour\n\n\u20221\/2 cup rolled oats\n\n\u20221\/2 cup granulated sugar\n\n\u20221 teaspoon baking powder\n\n\u20221\/2 teaspoon baking soda\n\n\u20221\/2 teaspoon salt\n\n\u20221 cup plain yogurt\n\n\u20222 eggs\n\n\u20221\/2 cup honey\n\u20222 teaspoons lemon zest\n\u20221 teaspoon vanilla extract\n\u20221 cup blueberries (fresh or frozen)\n\nInstructions:\n\n1. Preheat oven to 375\u00b0F. Line a muffin tin with paper liners and set aside.\n\n2. In a large bowl, whisk together the flour, oats, sugar, baking powder, baking soda, and salt.\n\n3. In a medium bowl, whisk together the yogurt, eggs, honey, lemon zest, and vanilla extract.\n\n4. Pour the wet ingredients into the dry ingredients and stir until just combined. Fold in the blueberries.\n\n5. Divide the batter evenly among the prepared muffin tin and bake for 18-20 minutes, or until a toothpick inserted into the center of a muffin comes out clean.\n\n6. Allow the muffins to cool in the tin for 5 minutes before transferring to a wire rack to cool completely. Enjoy!",
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop"
+        }
+    ],
+    "usage": {
+        "prompt_tokens": 11,
+        "completion_tokens": 288,
+        "total_tokens": 299
+    }
+}

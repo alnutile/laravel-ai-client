@@ -1,0 +1,79 @@
+{
+    "name": "alnutile/laravel-chatgpt",
+    "description": "Some base client work to talk to the api",
+    "keywords": [
+        "alnutile",
+        "laravel",
+        "laravel-chatgpt"
+    ],
+    "homepage": "https://github.com/alnutile/laravel-chatgpt",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alfred Nutile",
+            "email": "me@alfrednutile.info",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "alnutile/fixtures": "^0.0.1",
+        "guzzlehttp/guzzle": "^7.5",
+        "http-interop/http-factory-guzzle": "^1.2",
+        "illuminate/contracts": "^9.0",
+        "spatie/data-transfer-object": "^3.9",
+        "spatie/laravel-package-tools": "^1.14.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^6.0",
+        "nunomaduro/larastan": "^2.0.1",
+        "orchestra/testbench": "^7.0",
+        "pestphp/pest": "^1.21",
+        "pestphp/pest-plugin-laravel": "^1.1",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Alnutile\\LaravelChatgpt\\": "src",
+            "Alnutile\\LaravelChatgpt\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Alnutile\\LaravelChatgpt\\Tests\\": "tests"
+        },
+        "files": [
+            "vendor/alnutile/fixtures/src/helpers.php"
+        ]
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Alnutile\\LaravelChatgpt\\LaravelChatgptServiceProvider"
+            ],
+            "aliases": {
+                "LaravelChatgpt": "Alnutile\\LaravelChatgpt\\Facades\\LaravelChatgpt"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

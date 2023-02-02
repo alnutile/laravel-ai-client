@@ -1,0 +1,19 @@
+{
+    "id": "cmpl-6a2jltKSPmPVs2j7r5N3trweUdPoU",
+    "object": "text_completion",
+    "created": 1674048349,
+    "model": "text-davinci-003",
+    "choices": [
+        {
+            "text": "\n\nChicken Pomegranate Kebabs\n\nIngredients: \n- 2 chicken breasts, cut into cubes \n- 1 red onion, cut into cubes\n- 1\/4 cup of Greek yoghurt  \n- 1\/4 cup of pomegranate seeds\n\nInstructions: \n1. Preheat the oven to 375\u00b0F.\n2. In a medium bowl, combine the chicken cubes, red onion cubes, Greek yoghurt, and pomegranate seeds. Mix until everything is evenly coated.\n3. Skewer the chicken cubes on the skewers.\n4. Place the skewers on a parchment lined baking sheet.\n5. Bake for 15-20 minutes, or until chicken is cooked through.\n\nNutrition Information Per Serving: \nCalories: 330 \nFat: 10g \nCarbohydrates: 12g \nProtein: 42g",
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop"
+        }
+    ],
+    "usage": {
+        "prompt_tokens": 25,
+        "completion_tokens": 192,
+        "total_tokens": 217
+    }
+}

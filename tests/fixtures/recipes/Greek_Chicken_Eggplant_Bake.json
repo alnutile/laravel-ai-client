@@ -1,0 +1,19 @@
+{
+    "id": "cmpl-6a33GLubzqYseLQClrtL9cA8XwNwf",
+    "object": "text_completion",
+    "created": 1674049558,
+    "model": "text-davinci-003",
+    "choices": [
+        {
+            "text": "\n\nGreek Chicken Eggplant Bake\n\nServings: 4\n\nIngredients:\n-2 boneless, skinless chicken breasts, cubed\n-1 onion, diced\n-1 large eggplant, cubed\n-1 cup plain Greek yogurt\n-Salt and pepper, to taste\n-1\/4 cup olive oil\n\nInstructions:\n\n1. Preheat the oven to 375 degrees F.\n\n2. In a large bowl, combine the cubed chicken, diced onion, cubed eggplant, Greek yogurt, salt, and pepper.\n\n3. In a large baking dish, spread the chicken mixture evenly. Drizzle the olive oil over the top.\n\n4. Bake for 25-30 minutes or until the chicken is cooked through and golden brown.\n\nNutritional Information per Serving:\n\nCalories: 320\nFat: 16.6g\nProtein: 27.6g\nCarbohydrates: 13.7g\nFiber: 4.3g\nSugar: 5.3g\nSodium: 92.2mg",
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop"
+        }
+    ],
+    "usage": {
+        "prompt_tokens": 28,
+        "completion_tokens": 226,
+        "total_tokens": 254
+    }
+}

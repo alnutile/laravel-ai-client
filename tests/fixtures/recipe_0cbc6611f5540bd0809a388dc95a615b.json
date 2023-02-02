@@ -1,0 +1,19 @@
+{
+    "id": "cmpl-6a2FROh2N03yvYtaRiNyIr4WZLfm0",
+    "object": "text_completion",
+    "created": 1674046469,
+    "model": "text-davinci-003",
+    "choices": [
+        {
+            "text": "\n    public void testPristine() {\n        assertNotNull(fixture);\n    }\n\n    @Test\n    public void testInit() {\n        boolean result = fixture.init();\n        assertTrue(result);\n    }\n\n    @Test\n    public void testShutdown() {\n        boolean result = fixture.shutdown();\n        assertTrue(result);\n    }\n\n    @Test\n    public void testGetNumInputs() {\n        int result = fixture.getNumInputs();\n        assertEquals(6, result);\n    }\n\n    @Test\n    public void testGetNumOutputs() {\n        int result = fixture.getNumOutputs();\n        assertEquals(7, result);\n    }\n\n    @Test\n    public void testGetInputName() {\n        String result = fixture.getInputName(0);\n        assertTrue(result.equals(\"input0\"));\n    }\n\n    @Test\n    public void testGetOutputName() {\n        String result = fixture.getOutputName(0);\n        assertTrue(result.equals(\"output0\"));\n    }\n\n    @Test\n    public void testSetFeedbackOutput() {\n        int index = 0;\n\n        try {\n            fixture.setFeedbackOutput(index);\n        } catch (Exception ex) {\n            fail(ex.getMessage());\n        }\n    }\n\n    @Test\n    public void testRun() {\n        int result = fixture.run();\n        assertEquals(result, 1);\n    }\n\n    @Test\n    public void testSetInput() {\n\n        double[] data = {0.1, 0.2, 0.3, 0.4, 0.5, 0.6};\n\n        try {\n            fixture.setInput(0, data);\n        } catch (Exception ex) {\n            fail(ex.getMessage());\n        }\n    }\n\n    @Test\n    public void testGetTarget() {\n        double result = fixture.getTarget(0);\n        assertNotNull(result);\n    }\n\n    @Test\n    public void testGetOutput() {\n        double[] result = fixture.getOutput(0);\n        assertNotNull(",
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "length"
+        }
+    ],
+    "usage": {
+        "prompt_tokens": 1,
+        "completion_tokens": 500,
+        "total_tokens": 501
+    }
+}
