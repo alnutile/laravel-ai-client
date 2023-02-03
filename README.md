@@ -42,7 +42,7 @@ Here is an example of
   * ModerationFailed Event so you can react to that
 
 ```php
-use Alnutile\LaravelChatgpt\Events\SearchResults;$moderationOk = ModerationClientFacade::checkOk(request()->search);
+$moderationOk = ModerationClientFacade::checkOk(request()->search);
 if ($moderationOk == false) {
     ModerationFailed::dispatch(request());
 } else {
