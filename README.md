@@ -24,7 +24,7 @@ composer require alnutile/laravel-chatgpt
 You can then set your .env:
 
 ``` 
-AI_CLIENT=sk-mykeyhere
+AI_CLIENT=sk-key
 AI_MOCK=false
 ```
 
