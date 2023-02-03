@@ -13,8 +13,6 @@ class TextClientTest extends TestCase
     {
         $data = File::get(__DIR__.'/fixtures/text_response.json');
 
-        $data = json_decode($data, true);
-
         Http::fake(
             [
                 'api.openai.com/*' => Http::response($data, 200),

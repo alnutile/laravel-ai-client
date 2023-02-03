@@ -6,7 +6,7 @@ use Alnutile\LaravelChatgpt\DTOs\ResponseDto;
 use Facades\Alnutile\LaravelChatgpt\TextClientMock;
 use Illuminate\Support\Facades\Http;
 
-class TestMockClient extends TestCase
+class TextMockClientTest extends TestCase
 {
     public function test_mock_client()
     {
