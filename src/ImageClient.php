@@ -28,7 +28,8 @@ class ImageClient extends LaravelChatgpt implements ImageClientContract
             throw new \Exception('Error with response');
         }
 
-        $dto = new ImagesResponseDto($response->json());
+        $data = $response->json();
+        $dto = new ImagesResponseDto($data);
 
         return $dto;
     }
