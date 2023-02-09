@@ -35,7 +35,9 @@ class LaravelChatgpt
             throw new \Exception('No OpenAi Token');
         }
 
-        return Http::withHeaders(
+        return Http::retry(3)
+            ->timeout(120)
+            ->withHeaders(
             ['OpenAI-Organization' => 'org-ClL1biAi0m1pC2J2IV5C22TQ']
         )
             ->withToken($token);
