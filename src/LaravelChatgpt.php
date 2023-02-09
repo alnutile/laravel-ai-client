@@ -38,8 +38,8 @@ class LaravelChatgpt
         return Http::retry(3)
             ->timeout(120)
             ->withHeaders(
-            ['OpenAI-Organization' => 'org-ClL1biAi0m1pC2J2IV5C22TQ']
-        )
+                ['OpenAI-Organization' => 'org-ClL1biAi0m1pC2J2IV5C22TQ']
+            )
             ->withToken($token);
     }
 
