@@ -7,10 +7,23 @@ use Alnutile\LaravelChatgpt\DTOs\ResponseDto;
 
 class TextClientMock implements TextClientContract
 {
+    protected $prexif = null;
+
+    public function addPrefix($prefix): TextClientContract
+    {
+        $this->prexif = $prefix;
+
+        return $this;
+    }
+
     public function text($phrase): ResponseDto|\Exception
     {
         if (! app()->environment('testing')) {
             sleep(5);
+        }
+
+        if ($this->prexif) {
+            $phrase = sprintf('%s %s', $this->prexif, $phrase);
         }
 
         $mockResponse = <<<'EOD'

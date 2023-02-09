@@ -11,7 +11,7 @@ class TextClient extends LaravelChatgpt implements TextClientContract
 
     protected $prexif = null;
 
-    public function addPrefix($prefix)
+    public function addPrefix($prefix): TextClientContract
     {
         $this->prexif = $prefix;
 
