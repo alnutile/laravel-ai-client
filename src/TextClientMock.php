@@ -2,13 +2,11 @@
 
 namespace Alnutile\LaravelChatgpt;
 
-use Alnutile\LaravelChatgpt\Contracts\TextClientContract;
 use Alnutile\LaravelChatgpt\DTOs\ResponseDto;
 
 class TextClientMock extends TextClient
 {
     protected $prexif = null;
-
 
     public function text($phrase): ResponseDto|\Exception
     {

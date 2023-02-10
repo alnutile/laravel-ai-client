@@ -28,7 +28,7 @@ class TextClient extends LaravelChatgpt implements TextClientContract
             'prompt' => $phrase,
         ];
 
-        logger("This is the body", $body);
+        logger('This is the body', $body);
 
         $response = $this->client()
             ->post(
