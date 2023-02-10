@@ -35,6 +35,7 @@ class TextClient extends LaravelChatgpt implements TextClientContract
             );
 
         $response = $this->response($response);
+
         $response->search_term = str($phrase)->title()->toString();
 
         return $response;

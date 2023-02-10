@@ -23,6 +23,20 @@ class LaravelChatgpt
      */
     protected $temperature = 0.9;
 
+    public function setTemperature($amount): LaravelChatgpt
+    {
+        $this->temperature = $amount;
+
+        return $this;
+    }
+
+    public function setMaxTokens($amount): LaravelChatgpt
+    {
+        $this->max_tokens = $amount;
+
+        return $this;
+    }
+
     protected function fullUrl($uri)
     {
         return sprintf('%s/%s', $this->url, $uri);
