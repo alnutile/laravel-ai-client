@@ -25,7 +25,7 @@ class ResponseDto extends DataTransferObject
     public string $model;
 
     #[MapFrom('usage.completion_tokens')]
-    public string $completion_tokens;
+    public ?string $completion_tokens;
 
     #[MapFrom('usage.prompt_tokens')]
     public string $prompt_tokens;

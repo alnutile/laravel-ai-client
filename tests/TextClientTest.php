@@ -22,6 +22,22 @@ class TextClientTest extends TestCase
         Http::assertSentCount(1);
     }
 
+    public function test_setters()
+    {
+        $data = File::get(__DIR__.'/fixtures/text_response.json');
+
+        Http::fake(
+            [
+                'api.openai.com/*' => Http::response($data, 200),
+            ]
+        );
+        $results = TextClient::setTemperature(.7)
+            ->setMaxTokens(1000)
+            ->addPrefix('Can you write for me the next chapter after this one')
+            ->text('Test');
+        Http::assertSentCount(1);
+    }
+
     public function test_prefix()
     {
         $data = File::get(__DIR__.'/fixtures/text_response.json');
