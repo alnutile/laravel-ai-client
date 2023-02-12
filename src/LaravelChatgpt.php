@@ -18,6 +18,8 @@ class LaravelChatgpt
      */
     protected $max_tokens = 350; //500
 
+    protected $context = null;
+
     /*
      * @see https://beta.openai.com/docs/api-reference/completions/create
      */
@@ -26,6 +28,13 @@ class LaravelChatgpt
     public function setTemperature($amount): LaravelChatgpt
     {
         $this->temperature = $amount;
+
+        return $this;
+    }
+
+    public function setContext(string $context): LaravelChatgpt
+    {
+        $this->context = $context;
 
         return $this;
     }
@@ -69,7 +78,7 @@ class LaravelChatgpt
 
     protected function fullBody(array $body): array
     {
-        return array_merge(
+        $fullBody = array_merge(
             [
                 'model' => $this->model,
                 'temperature' => $this->temperature,
@@ -77,5 +86,11 @@ class LaravelChatgpt
             ],
             $body
         );
+
+        if ($this->context) {
+            $fullBody['context'] = $this->context;
+        }
+
+        return $fullBody;
     }
 }

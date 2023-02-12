@@ -33,9 +33,13 @@ class TextClientTest extends TestCase
         );
         $results = TextClient::setTemperature(.7)
             ->setMaxTokens(1000)
+            ->setContext('some previous content')
             ->addPrefix('Can you write for me the next chapter after this one')
             ->text('Test');
         Http::assertSentCount(1);
+        Http::assertSent(function (Request $request) {
+            return data_get($request, 'context') === 'some previous content';
+        });
     }
 
     public function test_prefix()
