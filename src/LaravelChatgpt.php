@@ -20,6 +20,8 @@ class LaravelChatgpt
 
     protected $context = null;
 
+    protected $stop = [];
+
     /*
      * @see https://beta.openai.com/docs/api-reference/completions/create
      */
@@ -35,6 +37,13 @@ class LaravelChatgpt
     public function setContext(string $context): LaravelChatgpt
     {
         $this->context = $context;
+
+        return $this;
+    }
+
+    public function setStop(array $stop): LaravelChatgpt
+    {
+        $this->stop[] = $stop;
 
         return $this;
     }
@@ -86,6 +95,7 @@ class LaravelChatgpt
             ],
             $body
         );
+
 
         if ($this->context) {
             $fullBody['context'] = $this->context;
