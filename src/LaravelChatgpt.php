@@ -34,6 +34,8 @@ class LaravelChatgpt
         return $this;
     }
 
+
+
     public function setContext(string $context): LaravelChatgpt
     {
         $this->context = $context;
@@ -96,6 +98,9 @@ class LaravelChatgpt
             $body
         );
 
+        if(!empty($this->stop)) {
+            $fullBody['stop'] = $this->stop;
+        }
 
         if ($this->context) {
             $fullBody['context'] = $this->context;
