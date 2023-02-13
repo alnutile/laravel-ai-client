@@ -43,7 +43,7 @@ class LaravelChatgpt
 
     public function setStop(array $stop): LaravelChatgpt
     {
-        $this->stop[] = $stop;
+        $this->stop = $stop;
 
         return $this;
     }
