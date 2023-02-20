@@ -2,6 +2,7 @@
 
 namespace Alnutile\LaravelChatgpt\Facades;
 
+use Alnutile\LaravelChatgpt\DTOs\ResponseDto;
 use Illuminate\Support\Facades\Facade;
 
 /**
@@ -9,6 +10,7 @@ use Illuminate\Support\Facades\Facade;
  * @method TextClientFacade setPresencePenalty(float $amount)
  * @method TextClientFacade setTemperature(float $amount)
  * @method TextClientFacade addPrefix(string $prefix)
+ * @method ResponseDto|\Exception text(string $prefix)
  */
 class TextClientFacade extends Facade
 {
