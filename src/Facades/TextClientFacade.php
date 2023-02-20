@@ -4,6 +4,12 @@ namespace Alnutile\LaravelChatgpt\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
+/**
+ * @method TextClientFacade setFrequencyPenalty(float $amount)
+ * @method TextClientFacade setPresencePenalty(float $amount)
+ * @method TextClientFacade setTemperature(float $amount)
+ * @method TextClientFacade prefix(string $prefix)
+ */
 class TextClientFacade extends Facade
 {
     /**
