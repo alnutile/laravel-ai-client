@@ -27,9 +27,27 @@ class LaravelChatgpt
      */
     protected $temperature = 0.9;
 
+    protected $frequency_penalty = 0.5;
+
+    protected $presence_penalty = 0.5;
+
     public function setTemperature($amount): LaravelChatgpt
     {
         $this->temperature = $amount;
+
+        return $this;
+    }
+
+    public function setPresencePenalty($amount): LaravelChatgpt
+    {
+        $this->presence_penalty = $amount;
+
+        return $this;
+    }
+
+    public function setFrequencyPenalty($amount): LaravelChatgpt
+    {
+        $this->frequency_penalty = $amount;
 
         return $this;
     }
@@ -90,6 +108,8 @@ class LaravelChatgpt
         $fullBody = array_merge(
             [
                 'model' => $this->model,
+                'presence_penalty' => $this->presence_penalty,
+                'frequency_penalty' => $this->frequency_penalty,
                 'temperature' => $this->temperature,
                 'max_tokens' => $this->max_tokens,
             ],
