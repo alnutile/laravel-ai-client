@@ -3,6 +3,7 @@
 namespace Alnutile\LaravelChatgpt;
 
 use Alnutile\LaravelChatgpt\DTOs\ResponseDto;
+use Illuminate\Support\Facades\File;
 
 class TextClientMock extends TextClient
 {
@@ -11,17 +12,21 @@ class TextClientMock extends TextClient
     public function text($phrase): ResponseDto|\Exception
     {
         if (! app()->environment('testing')) {
-            sleep(5);
+            sleep(3);
         }
 
         if ($this->prexif) {
             $phrase = sprintf('%s %s', $this->prexif, $phrase);
         }
 
-        $mockResponse = <<<'EOD'
-The Gmail Terms of Service outlines the rules for using Gmail, a free email service provided by Google. It covers topics such as acceptable use, content ownership, user privacy, and the use of cookies and other technologies. The agreement also explains the rights and responsibilities of both the user and Google with regards to the use of the service. In summary, the Gmail Terms of Service sets out the expectations for using the email service, including what users can expect from Google in terms of privacy and security of their data.
-
-EOD;
+        if ($path = config('chatgpt.path_to_mock_json')) {
+            $mockResponse = File::get($path);
+            $mockResponse = json_decode($mockResponse, true);
+        } else {
+            $mockResponse = File::get(__DIR__.'/../tests/fixtures/text_response.json');
+            $mockResponse = json_decode($mockResponse, true);
+        }
+        $mockResponse = data_get($mockResponse, 'choices.0.text');
 
         $data = [
             'id' => 'cmpl-6a2rbiefiw76XdXKmMeDGJ2sbKHFS',
