@@ -20,7 +20,7 @@
         "alnutile/fixtures": "^0.0.1",
         "guzzlehttp/guzzle": "^7.5",
         "http-interop/http-factory-guzzle": "^1.2",
-        "illuminate/contracts": "^9.0",
+        "illuminate/contracts": "^9.0|^10.0",
         "spatie/data-transfer-object": "^3.9",
         "spatie/laravel-package-tools": "^1.14.0"
     },
